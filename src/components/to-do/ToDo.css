@@ -1,0 +1,27 @@
+.ToDo {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 10px;
+    color: #282c34;
+    flex-direction: row;
+}
+
+button {
+    font-size: 22px;
+    padding: 2px 3px;
+    background-color: aquamarine;
+    color: aliceblue;
+    width: 70px;
+    margin: 8px 4px;
+    padding-bottom: 7px;
+}
+
+input {
+    margin: 5px 15px;
+    margin-left: 1px;
+}
+
+.reset{
+    background-color: mediumvioletred;
+    width: 200px;
+}
