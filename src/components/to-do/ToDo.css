@@ -13,7 +13,8 @@ button {
     color: aliceblue;
     width: 70px;
     margin: 8px 4px;
-    padding-bottom: 7px;
+    padding-top: 8px;
+    line-height: 20px;
 }
 
 input {
@@ -24,4 +25,8 @@ input {
 .reset{
     background-color: mediumvioletred;
     width: 200px;
+}
+
+.hr hr{
+    width: 80%;
 }
