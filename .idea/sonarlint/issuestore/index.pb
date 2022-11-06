@@ -52,3 +52,9 @@ G.idea/sonarlint/issuestore/7/a/7ab9b6042b7f15598ed16286e22ad22c11058633,4\f\4f
 src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
 V
 &src/components/to-do/css/bootstrap.css,0\8\085de97299e976a71e57bc5dd6a956c694fc42e5
+Q
+!src/components/to-do/css/ToDo.css,f\4\f4f37ef653d99507a80d239106b7879007db2ddb
+P
+ src/components/to-do/ToDoApp.jsx,7\4\7453783c95885d298954d1b8aab0ea829803e694
+A
+package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
