@@ -47,6 +47,3 @@ R
 "src/components/to-do/bootstrap.css,6\3\63329fe4aa35b9f85080f23633cd8c6ef21736ab
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
-:
-
-src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
