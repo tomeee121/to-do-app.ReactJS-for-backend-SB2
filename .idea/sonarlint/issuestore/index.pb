@@ -43,7 +43,12 @@ w
 G.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c,6\e\6e9644ddf83ab52f39902ecdbfdf4118285ac40c
 w
 G.idea/sonarlint/issuestore/7/a/7ab9b6042b7f15598ed16286e22ad22c11058633,4\f\4fdb76f44bd9bf778f3cc44e56d8d18502c0ac9d
-R
-"src/components/to-do/bootstrap.css,6\3\63329fe4aa35b9f85080f23633cd8c6ef21736ab
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
+[
++src/components/to-do/AuthenticatedRoute.jsx,4\d\4d5fcd924afe4d00ac8492a3fbfb439ea93e48f6
+:
+
+src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
+V
+&src/components/to-do/css/bootstrap.css,0\8\085de97299e976a71e57bc5dd6a956c694fc42e5
