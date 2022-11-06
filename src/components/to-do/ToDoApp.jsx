@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import bootstrap from './bootstrap.css'
 import ToDo from './ToDo.css'
+import AuthenticationService from "./AuthenticationService";
 
 
 class ToDoApp extends Component {
@@ -14,6 +15,7 @@ class ToDoApp extends Component {
                         <Route path="/login" component={Login}></Route>
                         <Route path="/welcome/:name" component={WelcomeComponent}></Route>
                         <Route path="/todos" component={ToDoComponent}></Route>
+                        <Route path="/logout" component={LogoutComponent}></Route>
                         <Route path="/" exact component={Login}></Route>
                         <Route component={ErrorComponent}></Route>
                     </Switch>
@@ -57,7 +59,7 @@ class HeaderComponent extends Component {
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
                         <li><Link to={"/login"} className={"nav-link"}>Login</Link></li>
-                        <li><Link to={"/logout"} className={"nav-link"}>Logout</Link></li>
+                        <li onClick={AuthenticationService.registerLogout}><Link to={"/logout"} className={"nav-link"}>Logout</Link></li>
                     </ul>
                 </nav>
                 <hr></hr>
@@ -69,9 +71,9 @@ class HeaderComponent extends Component {
 class FooterComponent extends Component {
     render() {
         return (
-            <footer>
+            <footer className="footer-todo">
+                in28minutes all rights reserved
                 <hr className={"hr"}></hr>
-                <div>Footer</div>
             </footer>
         );
     }
@@ -93,9 +95,10 @@ class ToDoComponent extends Component {
 
     render() {
         return (
-            <div className={"ToDo"}>
+            <div>
+                <div className={"container"}>
                 <h1>To-do'sy</h1>
-                <table>
+                <table className={"table"}>
                     <thead>
                     <tr>
                         <th>Id</th>
@@ -117,6 +120,7 @@ class ToDoComponent extends Component {
                     }
                     </tbody>
                 </table>
+                </div>
             </div>
         );
     }
@@ -129,7 +133,7 @@ class Login extends Component {
         this.state = {
             username: 'in28minutes',
             password: '',
-            hasLoginFailed: false
+            hasLoginFailed: true
         }
 
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -148,6 +152,7 @@ class Login extends Component {
             this.setState({
                 hasLoginFailed: false
             })
+            AuthenticationService.registerSucessfulLogin(this.state.username)
             this.props.history.push(`/welcome/${this.state.username}`)
         } else {
             this.setState({
@@ -159,13 +164,27 @@ class Login extends Component {
     render() {
         return (
             <div className={"ToDo"}>
-                {this.state.hasLoginFailed === true && <div>Invalid credentials</div>}
+            <h1>Login: </h1>
+                {/*{this.state.hasLoginFailed === true && <div>Invalid credentials</div>}*/}
                 {this.state.hasLoginFailed === false && <div>Login sucessful</div>}
                 Username: <input type={"text"} name={"username"} value={this.state.username}
                                  onChange={this.handleInputChange}/>
                 Password: <input type={"text"} name={"password"} value={this.state.password}
                                  onChange={this.handleInputChange}/>
-                <button onClick={this.loginClicked}>Login</button>
+                <button className={"btn btn-sucessful"} onClick={this.loginClicked}>Login</button>
+            </div>
+        );
+    }
+}
+
+class LogoutComponent extends Component {
+    render() {
+        return (
+            <div>
+                <h1>You are logged out</h1>
+                <div className={"container"}>
+                    Thank you for using the app!
+                </div>
             </div>
         );
     }
