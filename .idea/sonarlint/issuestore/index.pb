@@ -37,8 +37,6 @@ w
 G.idea/sonarlint/issuestore/b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3,b\0\b04578cffb47b1e57970601a0cacef6081245859
 w
 G.idea/sonarlint/issuestore/f/8/f862bf3b002df832494b06959117034fcf9811a4,6\e\6e4d259e36f136bd374bd9efae32c0719a934cd5
-A
-package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
 w
 G.idea/sonarlint/issuestore/1/c/1c3d85acfbcfae457641225516438caef60f2ab9,6\1\61a68b1845c3cd974a8afaa07fdc64843931c45b
 w
@@ -47,8 +45,6 @@ w
 G.idea/sonarlint/issuestore/7/a/7ab9b6042b7f15598ed16286e22ad22c11058633,4\f\4fdb76f44bd9bf778f3cc44e56d8d18502c0ac9d
 R
 "src/components/to-do/bootstrap.css,6\3\63329fe4aa35b9f85080f23633cd8c6ef21736ab
-<
-package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
 :

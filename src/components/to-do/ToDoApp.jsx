@@ -3,7 +3,9 @@ import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import bootstrap from './bootstrap.css'
 import ToDo from './ToDo.css'
 import AuthenticationService from "./AuthenticationService";
+import Login from './Login'
 import HeaderComponent from "./Header";
+import AuthenticatedRoute from "./AuthenticatedRoute";
 
 
 class ToDoApp extends Component {
@@ -14,9 +16,9 @@ class ToDoApp extends Component {
                     <HeaderComponent></HeaderComponent>
                     <Switch>
                         <Route path="/login" component={Login}></Route>
-                        <Route path="/welcome/:name" component={WelcomeComponent}></Route>
-                        <Route path="/todos" component={ToDoComponent}></Route>
-                        <Route path="/logout" component={LogoutComponent}></Route>
+                        <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}></AuthenticatedRoute>
+                        <AuthenticatedRoute path="/todos" component={ToDoComponent}></AuthenticatedRoute>
+                        <AuthenticatedRoute path="/logout" component={LogoutComponent}></AuthenticatedRoute>
                         <Route path="/" exact component={Login}></Route>
                         <Route component={ErrorComponent}></Route>
                     </Switch>
@@ -101,57 +103,6 @@ class ToDoComponent extends Component {
                     </tbody>
                 </table>
                 </div>
-            </div>
-        );
-    }
-}
-
-class Login extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: 'in28minutes',
-            password: '',
-            hasLoginFailed: true
-        }
-
-        this.handleInputChange = this.handleInputChange.bind(this)
-        this.loginClicked = this.loginClicked.bind(this)
-    }
-
-    handleInputChange(event) {
-        console.log(event.target.value)
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-    loginClicked() {
-        if (this.state.username === 'in28minutes' && this.state.password === 'dummy') {
-            this.setState({
-                hasLoginFailed: false
-            })
-            AuthenticationService.registerSucessfulLogin(this.state.username)
-            this.props.history.push(`/welcome/${this.state.username}`)
-        } else {
-            this.setState({
-                hasLoginFailed: true
-            })
-        }
-    }
-
-    render() {
-        return (
-            <div className={"ToDo"}>
-            <h1>Login: </h1>
-                {/*{this.state.hasLoginFailed === true && <div>Invalid credentials</div>}*/}
-                {this.state.hasLoginFailed === false && <div>Login sucessful</div>}
-                Username: <input type={"text"} name={"username"} value={this.state.username}
-                                 onChange={this.handleInputChange}/>
-                Password: <input type={"text"} name={"password"} value={this.state.password}
-                                 onChange={this.handleInputChange}/>
-                <button className={"btn btn-sucessful"} onClick={this.loginClicked}>Login</button>
             </div>
         );
     }
