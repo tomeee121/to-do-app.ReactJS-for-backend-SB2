@@ -3,13 +3,14 @@ import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import bootstrap from './bootstrap.css'
 import ToDo from './ToDo.css'
 import AuthenticationService from "./AuthenticationService";
+import HeaderComponent from "./Header";
 
 
 class ToDoApp extends Component {
     render() {
         return (
             <div>
-                <BrowserRouter>
+                <BrowserRouter><>
                     <HeaderComponent></HeaderComponent>
                     <Switch>
                         <Route path="/login" component={Login}></Route>
@@ -21,7 +22,7 @@ class ToDoApp extends Component {
                     </Switch>
                     <FooterComponent></FooterComponent>
                     {/*    <Route path="/welcome" element={<WelcomeComponent></WelcomeComponent>}></Route>*/}
-                </BrowserRouter>
+                </></BrowserRouter>
             </div>
         );
     }
@@ -44,26 +45,6 @@ class ErrorComponent extends Component {
             <div className={"ToDo"}>
                 <div>Error occured, not found!</div>
             </div>
-        );
-    }
-}
-
-class HeaderComponent extends Component {
-    render() {
-        return (
-            <header>
-                <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <ul className="navbar-nav">
-                        <li><Link to={"/welcome/Tomek"} className={"nav-link"}>Home</Link></li>
-                        <li><Link to={"/todos"} className={"nav-link"}>Todos</Link></li>
-                    </ul>
-                    <ul className="navbar-nav navbar-collapse justify-content-end">
-                        <li><Link to={"/login"} className={"nav-link"}>Login</Link></li>
-                        <li onClick={AuthenticationService.registerLogout}><Link to={"/logout"} className={"nav-link"}>Logout</Link></li>
-                    </ul>
-                </nav>
-                <hr></hr>
-            </header>
         );
     }
 }
@@ -110,8 +91,7 @@ class ToDoComponent extends Component {
                     <tbody>
                     {
                         this.state.todos.map(todo =>
-                            <tr>
-                                <td>{todo.id}</td>
+                            <tr key={todo.id}>
                                 <td>{todo.description}</td>
                                 <td>{todo.done.toString()}</td>
                                 <td>{todo.targetDate.toString()}</td>

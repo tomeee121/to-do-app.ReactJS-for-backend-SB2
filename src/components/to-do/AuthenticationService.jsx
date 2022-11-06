@@ -8,6 +8,11 @@ class AuthenticationService extends Component {
     registerLogout() {
         sessionStorage.removeItem('authenticatedUser')
     }
+
+    isUserLoggedIn() {
+        let user = sessionStorage.getItem('authenticatedUser')
+        return user !== null;
+    }
 }
 
 export default new AuthenticationService();
