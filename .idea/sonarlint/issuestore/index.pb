@@ -45,8 +45,6 @@ w
 G.idea/sonarlint/issuestore/7/a/7ab9b6042b7f15598ed16286e22ad22c11058633,4\f\4fdb76f44bd9bf778f3cc44e56d8d18502c0ac9d
 ;
 src/App.css,a\a\aa7165aefcf8ee3d73539e99ab007daf1aa18d8d
-[
-+src/components/to-do/AuthenticatedRoute.jsx,4\d\4d5fcd924afe4d00ac8492a3fbfb439ea93e48f6
 :
 
 src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
@@ -54,7 +52,15 @@ V
 &src/components/to-do/css/bootstrap.css,0\8\085de97299e976a71e57bc5dd6a956c694fc42e5
 Q
 !src/components/to-do/css/ToDo.css,f\4\f4f37ef653d99507a80d239106b7879007db2ddb
-P
- src/components/to-do/ToDoApp.jsx,7\4\7453783c95885d298954d1b8aab0ea829803e694
-A
-package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
+O
+src/components/to-do/Logout.jsx,9\e\9ea115f4c24ef3c411639755c2bbad4c027a65ba
+O
+src/components/to-do/Footer.jsx,6\2\62d269facdd6a538656fc0277c869543939c7df9
+W
+'src/components/to-do/ErrorComponent.jsx,b\d\bd471f206ffcd5cfb6727446fe3a8e3d8b50b60d
+O
+src/components/to-do/Header.jsx,1\6\16a3a44cc0ff43e6b1a8b2ca1a166d6d806e5701
+^
+.src/components/to-do/AuthenticationService.jsx,5\a\5a7f0609bcb28289b03b984249e5eea8b95711bc
+N
+src/components/to-do/Login.jsx,a\6\a620079f24012a959e002f4fd891e8cd03ddf80d

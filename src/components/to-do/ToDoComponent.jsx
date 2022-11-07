@@ -3,6 +3,7 @@ import bootstrap from './css/bootstrap.css'
 import ToDo from './css/ToDo.css'
 import ToDoDataService from "./ToDoDataService";
 import AuthenticationService from "./AuthenticationService";
+import moment from "moment";
 
 class ToDoComponent extends Component {
 
@@ -36,6 +37,10 @@ class ToDoComponent extends Component {
         this.refreshToDos()
     }
 
+    callUpdateMethod(id) {
+        this.props.history.push(`/todos/${id}`)
+    }
+
     refreshToDos() {
         console.log('refreshed')
         let user = AuthenticationService.isUserLoggedIn()
@@ -54,10 +59,11 @@ class ToDoComponent extends Component {
                     <table className={"table"}>
                         <thead>
                         <tr>
-                            <th>Id</th>
                             <th>description</th>
                             <th>Is completed?</th>
                             <th>Finish date</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -66,8 +72,9 @@ class ToDoComponent extends Component {
                                 <tr key={todo.id}>
                                     <td>{todo.description}</td>
                                     <td>{todo.done.toString()}</td>
-                                    <td>{todo.targetDate.toString()}</td>
-                                    <button className="btn btn-warning" onClick={() => this.callDeleteMethod(todo.id)}>Delete item</button>
+                                    <td>{moment(todo.targetDate).format('YYYY-MM-DD').toString()}</td>
+                                    <td><button className="btn btn-success" onClick={() => this.callUpdateMethod(todo.id)}>Update item</button></td>
+                                    <td><button className="btn btn-warning" onClick={() => this.callDeleteMethod(todo.id)}>Delete</button></td>
                                 </tr>
                             )
                         }

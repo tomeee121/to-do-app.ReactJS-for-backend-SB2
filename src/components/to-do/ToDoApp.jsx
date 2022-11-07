@@ -11,6 +11,7 @@ import ErrorComponent from "./ErrorComponent";
 import FooterComponent from "./Footer";
 import WelcomeComponent from "./WelcomeComponent";
 import LogoutComponent from "./Logout";
+import UpdateToDo from "./UpdateToDo";
 
 
 class ToDoApp extends Component {
@@ -22,6 +23,7 @@ class ToDoApp extends Component {
                     <Switch>
                         <Route path="/login" component={Login}></Route>
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}></AuthenticatedRoute>
+                        <AuthenticatedRoute path="/todos/:id" component={UpdateToDo}></AuthenticatedRoute>
                         <AuthenticatedRoute path="/todos" component={ToDoComponent}></AuthenticatedRoute>
                         <AuthenticatedRoute path="/logout" component={LogoutComponent}></AuthenticatedRoute>
                         <Route path="/" exact component={Login}></Route>
