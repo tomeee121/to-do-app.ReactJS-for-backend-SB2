@@ -19,11 +19,18 @@ export default class UpdateToDo extends Component {
     onSubmit(values) {
         console.log(values)
         let user = AuthenticationService.isUserLoggedIn()
+        if(this.state.id !== -1) {
         ToDoDataService.updateToDo(user, this.state.id, {
             id: this.state.id,
             description: values.description,
             targetDate: values.targetDate
-        }).then(res => this.props.history.push('/todos'))
+        }).then(res => this.props.history.push('/todos'))} else {
+            ToDoDataService.createToDo(user, {
+                id: -1,
+                description: values.description,
+                targetDate: values.targetDate
+            }).then(res => this.props.history.push('/todos'))
+        }
     }
 
     render() {
@@ -42,7 +49,7 @@ export default class UpdateToDo extends Component {
                                         <label>Date to finish</label>
                                         <Field type="date" name="targetDate" className="form-control"></Field>
                                     </fieldset>
-                                    <button type="submit" className="btn btn-success">Update
+                                    <button type="submit" className="btn btn-success">Save
                                     </button>
                                 </Form>)
                         }

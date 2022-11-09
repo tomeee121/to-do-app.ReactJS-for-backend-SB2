@@ -64,3 +64,7 @@ O
 .src/components/to-do/AuthenticationService.jsx,5\a\5a7f0609bcb28289b03b984249e5eea8b95711bc
 N
 src/components/to-do/Login.jsx,a\6\a620079f24012a959e002f4fd891e8cd03ddf80d
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+A
+package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47

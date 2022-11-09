@@ -12,12 +12,11 @@ class ToDoComponent extends Component {
         this.state = {
             todos: [],
             message: null
-                    // {id: 1, description: 'Learn React', done: false, targetDate: new Date()},
-                    // {id: 2, description: 'Visit India', done: false, targetDate: new Date()},
-                    // {id: 3, description: 'Dance course', done: false, targetDate: new Date()},
+                    // {id: 1, description: 'Learn React', done: false, targetDate: new Date()},{id: 2, description: 'Visit India', done: false, targetDate: new Date()},{id: 3, description: 'Dance course', done: false, targetDate: new Date()},
         }
         this.callDeleteMethod = this.callDeleteMethod.bind(this)
         this.refreshToDos = this.refreshToDos.bind(this)
+        this.addToDoClicked = this.addToDoClicked.bind(this)
     }
 
     componentDidMount() {
@@ -50,6 +49,10 @@ class ToDoComponent extends Component {
             })})
     }
 
+    addToDoClicked() {
+        this.props.history.push('/todos/-1')
+    }
+
     render() {
         return (
             <div>
@@ -80,6 +83,9 @@ class ToDoComponent extends Component {
                         }
                         </tbody>
                     </table>
+                    <div className={"row"}>
+                        <button className={"btn btn-primary"} onClick={this.addToDoClicked}>Add</button>
+                    </div>
                 </div>
             </div>
         );
